@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive quarterly earnings presentation using RevealJS" />
+  <!-- Reveal.js core CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme" />
+  <!-- Code highlight theme (compatible with highlight.js) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" />
+  <style>
+    /* Simple, modern tweaks */
+    .reveal .slide-logo { position: absolute; top: 12px; left: 12px; font-size: 12px; opacity: .8; }
+    .reveal .brand-pill { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); padding: 6px 10px; border-radius: 999px; }
+    .reveal .kpi { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin-top: 24px; }
+    .reveal .kpi .card { padding: 18px; border-radius: 16px; background: rgba(255,255,255,.06); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+    .reveal .kpi h3 { margin: 0 0 8px 0; }
+    .small { font-size: .6em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title / Cover -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="brand-pill">Prepared by: Technical Consultant</p>
+        <p class="small">Contact: <strong>24f2007837@ds.study.iitm.ac.in</strong></p>
+        <p class="small">Use ← → or Space to navigate. Press <kbd>s</kbd> for speaker notes.</p>
+        <aside class="notes">
+          Welcome, everyone. This deck demonstrates modern presentation capabilities with RevealJS while summarizing the key financials.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (require plugin + data-markdown) -->
+      <section data-markdown>
+        <textarea data-template>
+# Highlights (Markdown)
+- **Revenue:** $2.45B _(up 7% YoY)_
+- **Operating Margin:** 21.3%
+- **EPS (diluted):** $1.32
+- **Free Cash Flow:** $410M
+
+> This slide is authored in **Markdown** to keep reporting content easy to maintain in version control.
+
+*Presenter Tip:* Use GitHub PRs to review copy changes before publishing.
+        </textarea>
+        <aside class="notes">This slide proves Markdown support. Stakeholders can propose edits via PRs.</aside>
+      </section>
+
+      <!-- Fragments / animations -->
+      <section>
+        <h2>Drivers of Performance</h2>
+        <ul>
+          <li class="fragment fade-in">Subscriber growth in premium tiers</li>
+          <li class="fragment fade-in">Lower churn from revised retention program</li>
+          <li class="fragment fade-in">Cost discipline in infrastructure spend</li>
+          <li class="fragment fade-in">FX tailwinds in EMEA</li>
+        </ul>
+        <aside class="notes">Advance one bullet at a time to discuss impact sequentially.</aside>
+      </section>
+
+      <!-- KPI Cards with simple layout -->
+      <section>
+        <h2>Key KPIs</h2>
+        <div class="kpi">
+          <div class="card fragment fade-in-then-semi-out">
+            <h3>Revenue</h3>
+            <p><strong>$2.45B</strong> (+7% YoY)</p>
+          </div>
+          <div class="card fragment fade-in-then-semi-out">
+            <h3>Gross Margin</h3>
+            <p><strong>58.4%</strong> (+90 bps YoY)</p>
+          </div>
+          <div class="card fragment fade-in-then-semi-out">
+            <h3>Operating Income</h3>
+            <p><strong>$522M</strong> (+11% YoY)</p>
+          </div>
+          <div class="card fragment fade-in-then-semi-out">
+            <h3>FCF</h3>
+            <p><strong>$410M</strong> (10% of revenue)</p>
+          </div>
+        </div>
+        <aside class="notes">Pause after each card to comment on trend vs. guidance.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Reproducible Analysis (Code)</h2>
+        <pre><code class="language-python" data-trim data-line-numbers>
+# Quick EPS growth calculator
+import math
+
+def eps_growth(current_eps, prior_eps):
+    return (current_eps - prior_eps) / prior_eps
+
+print(round(eps_growth(1.32, 1.18) * 100, 2))  # => 11.86
+        </code></pre>
+        <aside class="notes">Call out that code blocks are syntax-highlighted and line-numbered for walkthroughs.</aside>
+      </section>
+
+      <!-- Math / Financial formulas -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^{t}} \]</p>
+        <p>Weighted Average Cost of Capital (WACC):</p>
+        <p>\[ \mathrm{WACC} = \frac{E}{D+E} r_e + \frac{D}{D+E} r_d (1-\tau) \]</p>
+        <aside class="notes">Math is rendered via KaTeX. Adjust r and cash flows for your scenario.</aside>
+      </section>
+
+      <!-- Speaker-notes-focused slide -->
+      <section>
+        <h2>Guidance</h2>
+        <p class="fragment">Q4 revenue growth expected in the <strong>6–8%</strong> range.</p>
+        <p class="fragment">Operating margin to expand by <strong>50–80 bps</strong>.</p>
+        <aside class="notes">
+          Reinforce confidence in pipeline and cost controls. Remind audience of seasonality and macro sensitivities.
+        </aside>
+      </section>
+
+      <!-- Closing / Contact -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Questions? Reach me at <strong>24f2007837@ds.study.iitm.ac.in</strong></p>
+        <p class="small">Repo-ready: just commit this single <code>index.html</code> to GitHub Pages.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js core + plugins (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/math/math.js"></script>
+  <!-- KaTeX for fast math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealNotes, RevealHighlight, RevealMath.KaTeX ],
+      // Optional display tweaks
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      backgroundTransition: 'fade'
+    });
+  </script>
+</body>
+</html>
